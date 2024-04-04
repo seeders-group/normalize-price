@@ -6,6 +6,19 @@
 
 You can install the package via composer:
 
+In the `composer.json` add the following repository:
+
+```json
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:seeders-group/normalize-price.git"
+    }
+  ]
+}
+```
+
 ```bash
 composer require seeders-group/normalize-price
 ```
@@ -20,6 +33,7 @@ $normalizePrice->normalize('1.000,00 EUR'); // 1000.00
 ```
 
 or use the Facade:
+
 ```php
 use Seeders\NormalizePrice\Facades\NormalizePrice;
 
