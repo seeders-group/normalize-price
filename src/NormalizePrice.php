@@ -4,7 +4,7 @@ namespace Seeders\NormalizePrice;
 
 class NormalizePrice
 {
-    public function normalize(string|float $price)
+    public function normalize(string|float $price): float
     {
         if (is_float($price)) {
             return $this->roundFloat($price);
@@ -32,7 +32,6 @@ class NormalizePrice
             return str_replace(',', '', $price);
         } elseif (preg_match('/^\d{1,3}(\.\d{3})*,\d{2}$/', $price)) {
             // Convert to standard decimal point format: 1.000,00 -> 1000.00
-            ray($price, 'optie 2');
             return str_replace(',', '.', str_replace('.', '', $price));
         }
 
