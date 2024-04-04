@@ -74,7 +74,6 @@ test('normalize price string above 1000  with dot and comma switched', function 
         ->and($normalizedPrice)->toBe(1000.00);
 });
 
-
 test('normalize price without dot or comma', function () {
     $price = '1010';
 
@@ -92,7 +91,6 @@ test('normalize price without dot or comma ', function () {
     expect($normalizedPrice)->toBeFloat()
         ->and($normalizedPrice)->toBe(1010.00);
 });
-
 
 test('normalize price without string with euro sign', function () {
     $price = '€ 1,010.00';
