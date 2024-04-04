@@ -33,6 +33,9 @@ class NormalizePrice
         } elseif (preg_match('/^\d{1,3}(\.\d{3})*,\d{2}$/', $price)) {
             // Convert to standard decimal point format: 1.000,00 -> 1000.00
             return str_replace(',', '.', str_replace('.', '', $price));
+        } elseif (preg_match('/^\d{1,3}(\.\d{3})$/', $price)) {
+            // Convert to standard decimal point format: 1.000 -> 1000
+            return str_replace('.', '', $price);
         }
 
         // Return the price without modifications if it doesn't match expected formats

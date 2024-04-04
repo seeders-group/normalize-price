@@ -31,6 +31,7 @@ test('normalize strings', function () {
         '1010' => 1010.00,
         '€ 1,010.00' => 1010.00,
         '1.073,55 EUR' => 1073.55,
+        '1.085 €' => 1085.00,
     ];
 
     foreach ($data as $price => $expected) {
